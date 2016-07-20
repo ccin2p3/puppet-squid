@@ -1,0 +1,5 @@
+# logformat fragment for <%= @name %>
+<% @name.sort.each do |e| -%>
+logformat <%= @name %> <%= @options %> <%= e %>
+<% end -%>
+

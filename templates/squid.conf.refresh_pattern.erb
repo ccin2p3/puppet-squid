@@ -1,0 +1,5 @@
+# acl fragment for <%= @refresh_pattern %>
+<% @entries.sort.each do |e| -%>
+refresh_pattern <%= @name %> <%= @entries %> <%= e %>
+<% end -%>
+

@@ -24,3 +24,78 @@ max_filedescriptors           <%= @max_filedescriptors %>
 workers           <%= @workers %>
 
 <% end -%>
+<% if @memory_cache_shared -%>
+memory_cache_shared           <%= @memory_cache_shared %>
+
+<% end -%>
+
+<% if @cache_miss_revalidate -%>
+cache_miss_revalidate           <%= @cache_miss_revalidate %>
+
+<% end -%>
+
+<% if @cache_mgr -%>
+cache_mgr           <%= @cache_mgr %>
+
+<% end -%>       
+
+<% if @cache_effective_user -%>
+cache_effective_user           <%= @cache_effective_user %>
+
+<% end -%>  
+                    
+<% if @cache_effective_group  -%>
+cache_effective_group            <%= @cache_effective_group  %>
+
+<% end -%> 
+
+<% if @logfile_rotate  -%>
+logfile_rotate           <%= @logfile_rotate  %>
+
+<% end -%> 
+         
+<% if @snmp_incoming_address  -%>
+snmp_incoming_address           <%= @snmp_incoming_address %>
+
+<% end -%>                
+           
+<% if @snmp_outgoing_address  -%>
+snmp_outgoing_address           <%= @snmp_outgoing_address  %>
+
+<% end -%>           
+
+<% if @collapsed_forwarding  -%>
+collapsed_forwarding           <%= @collapsed_forwarding  %>
+
+<% end -%>         
+
+<% if @maximum_object_size  -%>
+maximum_object_size           <%= @maximum_object_size  %>
+
+<% end -%>                        
+
+<% if @negative_ttl  -%>
+negative_ttl           <%= @negative_ttl  %>
+
+<% end -%>  
+         
+<% if @pid_filename  -%>
+pid_filename            <%= @pid_filename   %>
+
+<% end -%>                   
+
+<% if @quick_abort_min  -%>
+quick_abort_min            <%= @quick_abort_min   %>
+
+<% end -%>                   
+
+<% if @strip_query_terms  -%>
+strip_query_terms            <%= @strip_query_terms   %>
+
+<% end -%> 
+                             
+
+<% if @umask  -%>
+umask            <%= @umask   %>
+
+<% end -%>             

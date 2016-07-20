@@ -16,4 +16,24 @@ class squid::params {
   $http_ports                    = undef
   $snmp_ports                    = undef
   $cache_dirs                    = undef
+  $cache_log                     = undef
+ 
+  $cache_miss_revalidate         = undef
+  $cache_mgr                     = undef
+  $cache_effective_user          = undef
+  $cache_effective_group         = undef
+  $logfile_rotate                = undef
+  $logformat                     = undef  
+  $snmp_incoming_address         = undef
+  $snmp_outgoing_address         = undef
+  $snmp_access                   = undef
+  $collapsed_forwarding          = undef
+  $maximum_object_size           = undef
+  $negative_ttl                  = undef
+  $pid_filename                  = undef
+  $quick_abort_min               = undef
+  $refresh_pattern               = undef
+  $strip_query_terms             = undef
+  $umask                         = undef
+
 }

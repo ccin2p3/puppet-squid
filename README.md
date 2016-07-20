@@ -48,6 +48,23 @@ Parameters to the squid class almost map 1 to 1 to squid.conf parameters themsel
 * `http_ports` defaults to undef. If you pass in a hash of http_port entries, they will be defined automatically. [http_port entries](http://www.squid-cache.org/Doc/config/http_port/).
 * `snmp_ports` defaults to undef. If you pass in a hash of snmp_port entries, they will be defined automatically. [snmp_port entries](http://www.squid-cache.org/Doc/config/snmp_port/).
 * `cache_dirs` defaults to undef. If you pass in a hash of cache_dir entries, they will be defined automatically. [cache_dir entries](http://www.squid-cache.org/Doc/config/cache_dir/).
+* `cache_miss_revalidate` defaults to undef. [cache_miss_revalidate] http://www.squid-cache.org/Doc/config/cache_miss_revalidate/).
+* `cache_mgr` defaults to undef. String. [cache_mgr](http://www.squid-cache.org/Doc/config/cache_mgr/).
+* `cache_effective_user` defaults to undef. String. [cache_effective_user](http://www.squid-cache.org/Doc/config/cache_effective_user/).       
+* `cache_effective_group` defaults to undef. String. [cache_effective_group](http://www.squid-cache.org/Doc/config/cache_effective_group/).
+* `logfile_rotate` defaults to undef. Integer. [logfile_rotate](http://www.squid-cache.org/Doc/config/logfile_rotate/).
+* `logformat` defaults to undef. If you pass in a hash of logformat entries, they will be defined automatically [logformat entries](http://www.squid-cache.org/Doc/config/logformat/).
+* `snmp_incoming_address` defaults to undef. [snmp_incoming_address](http://www.squid-cache.org/Doc/config/snmp_incoming_address/).
+* `snmp_outgoing_address` defaults to undef. [snmp_outgoing_address](http://www.squid-cache.org/Doc/config/snmp_outgoing_address/).
+* `snmp_access`  defaults to undef. If you pass in a hash of snmp access entries, they will be defined automatically  [snmp_access](http://www.squid-cache.org/Doc/config/snmp_access/).
+* `collapsed_forwarding` defaults to undef. [collapsed_forwarding](http://www.squid-cache.org/Doc/config/collapsed_forwarding/).
+* `maximum_object_size` defaults to undef. [maximum_object_size](http://www.squid-cache.org/Doc/config/maximum_object_size/).
+* `negative_ttl` defaults to undef. [negative_ttl](http://www.squid-cache.org/Doc/config/negative_ttl/).
+* `pid_filename` defaults to undef. [pid_filename](http://www.squid-cache.org/Doc/config/pid_filename/).
+* `quick_abort_min` defaults to undef. [quick_abort_min](http://www.squid-cache.org/Doc/config/quick_abort_min/).
+* `refresh_pattern` defaults to undef. [refresh_pattern](http://www.squid-cache.org/Doc/config/refresh_pattern/).
+* `strip_query_terms` defaults to undef. [strip_query_terms](http://www.squid-cache.org/Doc/config/strip_query_terms/).
+* `umask` defaults to undef. [umask](http://www.squid-cache.org/Doc/config/umask/).
 
 ```puppet
 class{'::squid':

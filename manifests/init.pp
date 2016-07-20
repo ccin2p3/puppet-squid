@@ -15,6 +15,27 @@ class squid (
   $http_ports                    = $squid::params::http_ports,
   $snmp_ports                    = $squid::params::snmp_ports,
   $cache_dirs                    = $squid::params::cache_dirs,
+  
+  $cache_miss_revalidate         = $squid::params::cache_miss_revalidate,
+  $cache_mgr                     = $squid::params::cache_mgr,
+  $cache_effective_user          = $squid::params::cache_effective_user,
+  $cache_effective_group         = $squid::params::cache_effective_group,
+  $logfile_rotate                = $squid::params::logfile_rotate,
+  $logformat                     = $squid::params::logformat,  
+  $snmp_incoming_address         = $squid::params::snmp_incoming_address,
+  $snmp_outgoing_address         = $squid::params::snmp_outgoing_address,
+  $snmp_access                   = $squid::params::snmp_access,
+  $collapsed_forwarding          = $squid::params::collapsed_forwarding,
+  $maximum_object_size           = $squid::params::maximum_object_size,
+  $negative_ttl                  = $squid::params::negative_ttl,
+  $pid_filename                  = $squid::params::pid_filename,
+  $quick_abort_min               = $squid::params::quick_abort_min,
+  $refresh_pattern               = $squid::params::refresh_pattern,
+  $strip_query_terms             = $squid::params::strip_query_terms,
+  $umask                         = $squid::params::umask,
+  
+  
+  
 ) inherits ::squid::params {
 
   validate_string($ensure_service)
@@ -54,7 +75,52 @@ class squid (
   if $cache_dirs {
     validate_hash($cache_dirs)
   }
-
+  if $cache_miss_revalidate {
+    validate_re($cache_miss_revalidate,['^on$','^off$'])
+  }
+  if $cache_mgr {
+    validate_string($cache_mgr)
+  }
+  if $cache_effective_user {
+    validate_string($cache_effective_user)
+  }
+  if $cache_effective_group {
+    validate_string($cache_effective_group)
+  }
+  if $logfile_rotate {
+    validate_integer($logfile_rotate)
+  }
+  if $logformat {
+    validate_hash($logformat)
+  }
+  if $snmp_access {
+    validate_hash($snmp_access)
+  }
+  if $collapsed_forwarding {
+    validate_re($collapsed_forwarding,['^on$','^off$'])
+  }
+  if $maximum_object_size {
+    validate_re($maximum_object_size,'\d+ KB')
+  }
+  if $negative_ttl {
+    validate_re($negative_ttl,'\-+\d')
+  }
+  if $pid_filename {
+    validate_string($pid_filename)
+  }
+  if $quick_abort_min {
+    validate_re($quick_abort_min,'\d+ KB')
+  }
+  if $refresh_pattern {
+    validate_string($refresh_pattern)
+  }
+  if $strip_query_terms {
+    validate_re($strip_query_terms,['^on$','^off$'])
+  }
+  if $umask {
+    validate_integer($umask)
+  }
+  
   anchor{'squid::begin':} ->
   class{'::squid::install':} ->
   class{'::squid::config':} ~>
